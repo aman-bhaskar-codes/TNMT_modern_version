@@ -114,5 +114,54 @@ func _on_hit_connected(target: Node, damage: float) -> void:
 	if DamageNumbers:
 		DamageNumbers.spawn(target.global_position, damage)
 
+# ---------- MOVEMENT ----------
 
-		
+func apply_horizontal_movement(delta: float) -> void:
+	var dir := InputReader.move_direction.x
+	if dir != 0.0:
+		sprite.scale.x = sign(dir)
+	velocity.x = lerp(velocity.x, dir * stats.move_speed, stats.acceleration)
+
+func apply_friction(delta: float) -> void:
+	velocity.x = lerp(velocity.x, 0.0, stats.deceleration)
+
+func apply_gravity(delta: float) -> void:
+	if not is_on_floor():
+		var grav_mult := stats.fall_gravity_multiplier if velocity.y > 0.0 else 1.0
+		velocity.y += stats.gravity * grav_mult * delta
+		velocity.y = minf(velocity.y, stats.max_fall_speed)
+
+func execute_jump() -> void:
+	velocity.y = stats.jump_velocity
+	coyote_timer = 0.0
+	jump_buffered = false
+	jump_buffer_timer = 0.0
+
+func get_facing() -> float:
+	return sprite.scale.x
+
+func play_anim(anim_name: String) -> void:
+	if anim.has_animation(anim_name):
+		anim.play(anim_name)
+
+# ---------- TIMERS ----------
+
+func _tick_coyote(delta: float) -> void:
+	if is_on_floor():
+		coyote_timer = stats.coyote_time
+	else:
+		coyote_timer -= delta
+
+func _tick_jump_buffer(delta: float) -> void:
+	if jump_buffered:
+		jump_buffer_timer -= delta
+		if jump_buffer_timer <= 0.0:
+			jump_buffered = false
+
+func _on_jump_pressed() -> void:
+	jump_buffered = true
+	jump_buffer_timer = stats.jump_buffer_time
+
+func _on_jump_released() -> void:
+	if velocity.y < 0.0:
+		velocity.y *= stats.cut_jump_multiplier

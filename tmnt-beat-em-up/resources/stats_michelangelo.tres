@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/player/player_stats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+character_name = "Michelangelo"
+accent_color = Color(0.984, 0.651, 0.141, 1)
+move_speed = 420.0
+acceleration = 0.26
+deceleration = 0.18
+lane_speed = 4.0
+jump_velocity = -560.0
+cut_jump_multiplier = 0.40
+coyote_time = 0.16
+jump_buffer_time = 0.14
+gravity = 1350.0
+fall_gravity_multiplier = 1.65
+max_fall_speed = 1100.0
+attack_damage = 16.0
+attack_cooldown = 0.28
+combo_window = 0.26
+max_health = 90
+max_lives = 3
+invincibility_frames = 1.4

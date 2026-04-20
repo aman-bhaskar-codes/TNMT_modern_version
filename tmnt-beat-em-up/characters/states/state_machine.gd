@@ -33,3 +33,6 @@ func update(delta: float) -> void:
 
 func physics_update(delta: float) -> void:
 	_current.physics_update(delta)
+
+func current_name() -> String:
+	return _current.state_name

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/player/player_stats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+character_name = "Raphael"
+accent_color = Color(0.973, 0.443, 0.443, 1)
+move_speed = 360.0
+acceleration = 0.24
+deceleration = 0.16
+lane_speed = 3.5
+jump_velocity = -500.0
+cut_jump_multiplier = 0.50
+coyote_time = 0.12
+jump_buffer_time = 0.10
+gravity = 1500.0
+fall_gravity_multiplier = 1.80
+max_fall_speed = 1300.0
+attack_damage = 26.0
+attack_cooldown = 0.30
+combo_window = 0.20
+max_health = 120
+max_lives = 3
+invincibility_frames = 1.0

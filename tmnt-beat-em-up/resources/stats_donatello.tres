@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://characters/player/player_stats.gd" id="1_stats"]
+
+[resource]
+script = ExtResource("1_stats")
+character_name = "Donatello"
+accent_color = Color(0.502, 0.306, 0.769, 1)
+move_speed = 340.0
+acceleration = 0.20
+deceleration = 0.12
+lane_speed = 3.0
+jump_velocity = -480.0
+cut_jump_multiplier = 0.45
+coyote_time = 0.14
+jump_buffer_time = 0.12
+gravity = 1400.0
+fall_gravity_multiplier = 1.75
+max_fall_speed = 1200.0
+attack_damage = 24.0
+attack_cooldown = 0.40
+combo_window = 0.24
+max_health = 110
+max_lives = 3
+invincibility_frames = 1.2

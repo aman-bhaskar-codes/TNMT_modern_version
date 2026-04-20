@@ -44,3 +44,6 @@ func _on_player_died() -> void:
 	else:
 		await get_tree().create_timer(2.0).timeout
 		get_tree().reload_current_scene()
+
+func player_died() -> void:
+	_on_player_died()

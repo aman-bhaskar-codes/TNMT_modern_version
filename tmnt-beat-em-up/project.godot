@@ -42,9 +42,11 @@ special={
 
 [application]
 
-run/main_scene="res://scenes/level_01.tscn"
+run/main_scene="res://scenes/boot.tscn"
 
 [autoload]
 
 GameManager="*res://autoloads/game_manager.gd"
 InputReader="*res://autoloads/input_reader.gd"
+DamageNumbers="*res://autoloads/damage_numbers.gd"
+HitParticlesManager="*res://fx/hit_particles.gd"
