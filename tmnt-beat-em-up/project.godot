@@ -1,0 +1,50 @@
+[input]
+
+move_left={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":65 }]
+}
+
+move_right={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":68 }]
+}
+
+move_up={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":87 }]
+}
+
+move_down={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":83 }]
+}
+
+jump={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":32 }]
+}
+
+light_attack={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":90 }]
+}
+
+heavy_attack={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":88 }]
+}
+
+special={
+"deadzone": 0.2,
+"events": [{ "type":"key", "keycode":67 }]
+}
+
+[application]
+
+run/main_scene="res://scenes/level_01.tscn"
+
+[autoload]
+
+GameManager="*res://autoloads/game_manager.gd"
+InputReader="*res://autoloads/input_reader.gd"
